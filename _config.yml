@@ -108,3 +108,17 @@ deploy:
   repo: 'https://github.com/FY2008/fy2008.github.io.git' # https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
   branch: 'main'
   message: "站点更新: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:

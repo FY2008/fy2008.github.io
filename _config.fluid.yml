@@ -61,7 +61,7 @@ code:
 
       # 是否根据 style 改变代码背景色（如果 style 是深色背景别忘了开启此项）
       # If true, the code background will change color based on the style (If style has a dark background, don't forget to true)
-      bg_color: false
+      bg_color: true
 
     prismjs:
       # 在下方链接页面右侧的圆形按钮挑选 style 填入，也可以直接填入 css 链接
@@ -91,7 +91,7 @@ fun_features:
 
     # 是否循环播放效果
     # If true, loop animation
-    loop: false
+    loop: true
 
   # 为文章内容中的标题添加锚图标
   # Add an anchor icon to the title on the post page
@@ -205,7 +205,7 @@ custom_html: ''
 # 网页访问统计
 # Analysis of website visitors
 web_analytics:  # 网页访问统计
-  enable: false
+  enable: true
 
   # 百度统计的 Key，值需要获取下方链接中 `hm.js?` 后边的字符串
   # Baidu analytics, get the string behind `hm.js?`
@@ -242,11 +242,11 @@ web_analytics:  # 网页访问统计
   # LeanCloud 计数统计，可用于 PV UV 展示，如果 `web_analytics: enable` 没有开启，PV UV 展示只会查询不会增加
   # LeanCloud count statistics, which can be used for PV UV display. If `web_analytics: enable` is false, PV UV display will only query and not increase
   leancloud:
-    app_id:
-    app_key:
+    app_id: 21vmNUBs7rFRciAemNv5usxG-gzGzoHsz
+    app_key: kMbwFAh9m1RUo216tJgCkNR0
     # REST API 服务器地址，国际版不填
     # Only the Chinese mainland users need to set
-    server_url:
+    server_url: https://21vmnubs.lc-cn-n1-shared.com
 
 # 对页面中的图片进行懒加载处理，可见范围外的图片不会加载
 # Lazy loading of images on the page
@@ -298,7 +298,7 @@ navbar:
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
-    #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
+    - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
@@ -360,20 +360,24 @@ footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
   content: '
-    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-    <i class="iconfont icon-love"></i>
-    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    © 2020-2020 峰影(zsf90). All rights reserved.<br>
+    <a href="/atom.xml"><span>atom.xml</span></a> | 
+    构建
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener" title="Hexo"><span>Hexo</span></a> | 
+    主题 
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener" title="Fluid 主题"><span>Fluid</span></a> | 
+    <a href="https://www.github.com/fy2008" target="_blank" title="我的Github"><span>Github</span></a>
   '
 
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
   statistics:
-    enable: false
+    enable: true
 
     # 统计数据来源，如果使用 leancloud 需要设置 `web_analytics: leancloud` 中的参数；如果使用 busuanzi 可能会有请求失败的情况
     # Data source. If use leancloud, you need to set the parameter in `web_analytics: leancloud`
     # Options: busuanzi | leancloud
-    source: "busuanzi"
+    source: "leancloud"
 
     # 页面显示的文本，{}是数字的占位符（必须包含)，下同
     # Displayed text, {} is a placeholder for numbers (must be included), the same below
@@ -401,7 +405,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: /img/default.jpg
+  banner_img: /img/10.jpg
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -420,7 +424,7 @@ index:
 
     # 为空则按 hexo config.subtitle 显示
     # If empty, text based on `subtitle` in hexo config
-    text: "【Easy come easy go::😂】"
+    text: "{Easy come easy go::😂}"
 
     # 通过 API 接口作为首页副标题的内容，必须返回的是 JSON 格式，如果请求失败则按 text 字段显示，该功能必须先开启 typing 打字机功能
     # Subtitle of the homepage through the API, must be returned a JSON. If the request fails, it will be displayed in `text` value. This feature must first enable the typing animation
@@ -528,7 +532,7 @@ post:
   # 在文章开头显示文章更新时间，该时间默认是 md 文件更新时间，可通过 front-matter 中 `updated` 手动指定（和 date 一样格式）
   # Update date is displayed at the beginning of the post. The default date is the update date of the md file, which can be manually specified by `updated` in front-matter (same format as date)
   updated:
-    enable: false
+    enable: true
 
     # 描述文字
     # Descriptive text before date
@@ -739,7 +743,7 @@ twikoo:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/2.jpg
+  banner_img: /img/5.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -840,30 +844,54 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: /img/default.png
-  banner_img_height: 60
+  banner_img: /img/6.jpg
+  banner_img_height: 80
   banner_mask_alpha: 0.3
   subtitle:
   # 友链的成员项
   # Member item of page
   items:
     - {
+      title: "Iconfont-阿里巴巴矢量图标库",
+      intro: "Iconfont-阿里巴巴矢量图标库，国内功能很强大且图标内容很丰富的矢量图标库，提供矢量图标下载、在线存储、格式转换等功能",
+      link: "https://www.iconfont.cn/",
+      image: "/img/iconfont.png"
+    }
+    - {
+      title: "Hexo",
+      intro: "快速、简洁且高效的博客框架",
+      link: "https://hexo.io/zh-cn/",
+      image: "/img/hexo-logo.svg"
+    }
+    - {
+      title: "Pexels",
+      intro: "免费素材图片",
+      link: "https://www.pexels.com/zh-cn/",
+      image: "/img/pexels-icon.png"
+    }
+    - {
+      title: "LeanCloud",
+      intro: "领先的BaaS 提供商，提供数据存储、文件存储、云引擎、容器、即时通讯、消息推送、短信、游戏云等多项服务，为移动开发提供强有力的后端支持。",
+      link: "https://www.leancloud.cn/",
+      image: "/img/LeanCloud.svg"
+    }
+    - {
       title: "Fluid Blog",
       intro: "主题博客",
       link: "https://hexo.fluid-dev.com/",
-      image: "/img/favicon.png"
+      image: "/img/fluid-favicon.png"
     }
     - {
       title: "Fluid Docs",
       intro: "主题使用指南",
       link: "https://hexo.fluid-dev.com/docs/",
-      image: "/img/favicon.png"
+      image: "/img/fluid-favicon.png"
     }
     - {
       title: "Fluid Repo",
       intro: "主题 GitHub 仓库",
       link: "https://github.com/fluid-dev/hexo-theme-fluid",
-      image: "/img/favicon.png"
+      image: "/img/fluid-favicon.png"
     }
 
 
