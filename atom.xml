@@ -6,7 +6,7 @@
   <link href="https://fy2008.github.io/atom.xml" rel="self"/>
   
   <link href="https://fy2008.github.io/"/>
-  <updated>2020-12-28T15:45:10.692Z</updated>
+  <updated>2020-12-29T07:59:10.388Z</updated>
   <id>https://fy2008.github.io/</id>
   
   <author>
@@ -17,11 +17,98 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>推荐一款 STM32 的 vscode 插件，stm32-for-vscode</title>
+    <link href="https://fy2008.github.io/2020/12/29/stm32-for-vscode/"/>
+    <id>https://fy2008.github.io/2020/12/29/stm32-for-vscode/</id>
+    <published>2020-12-29T06:29:35.000Z</published>
+    <updated>2020-12-29T07:59:10.388Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/bmd-studio/stm32-for-vscode&quot;&gt;stm32-for-vscode&lt;/a&gt; 是一款用于使用 &lt;code&gt;vscode&lt;/code&gt; 来开发 &lt;code&gt;stm32&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="电子技术" scheme="https://fy2008.github.io/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="STM32" scheme="https://fy2008.github.io/tags/STM32/"/>
+    
+    <category term="vscode" scheme="https://fy2008.github.io/tags/vscode/"/>
+    
+    <category term="插件" scheme="https://fy2008.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MSYS2 命令笔记</title>
+    <link href="https://fy2008.github.io/2020/12/29/msys2-command/"/>
+    <id>https://fy2008.github.io/2020/12/29/msys2-command/</id>
+    <published>2020-12-29T04:57:02.000Z</published>
+    <updated>2020-12-29T06:19:24.421Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;首先说说什么是 &lt;code&gt;MSYS2&lt;/code&gt; ？&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;MSYS2 （Minimal SYStem 2)&lt;/code&gt; 是一个&lt;code&gt;MSYS&lt;/code&gt;的独立改写版本，主要用于 &lt;code&gt;shell&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://fy2008.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="MSYS2" scheme="https://fy2008.github.io/tags/MSYS2/"/>
+    
+    <category term="命令" scheme="https://fy2008.github.io/tags/%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用 VSCode 开发 STM32 项目</title>
+    <link href="https://fy2008.github.io/2020/12/29/stm32-vscode-dev/"/>
+    <id>https://fy2008.github.io/2020/12/29/stm32-vscode-dev/</id>
+    <published>2020-12-28T16:38:30.000Z</published>
+    <updated>2020-12-29T08:05:33.264Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;vscode 是一款最好用的开发工具之一，该软件非常好用强大，通过安装插件几乎可以完成所有的开发工作。&lt;/p&gt;
+&lt;p&gt;用 vscode 开发 stm32 的步骤是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用&lt;code&gt;STM32CubeMX&lt;/code&gt; 生成</summary>
+        
+      
+    
+    
+    
+    <category term="电子技术" scheme="https://fy2008.github.io/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="STM32" scheme="https://fy2008.github.io/tags/STM32/"/>
+    
+    <category term="vscode" scheme="https://fy2008.github.io/tags/vscode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo 配置笔记</title>
     <link href="https://fy2008.github.io/2020/12/28/Hexo-%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/"/>
     <id>https://fy2008.github.io/2020/12/28/Hexo-%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/</id>
     <published>2020-12-28T06:45:03.000Z</published>
-    <updated>2020-12-28T15:45:10.692Z</updated>
+    <updated>2020-12-29T06:36:37.893Z</updated>
     
     
       
