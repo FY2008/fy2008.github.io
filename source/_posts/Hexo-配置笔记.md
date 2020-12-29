@@ -67,6 +67,10 @@ deploy:
 
 ```hexo new page --path about/me```
 
+```D:\dev\blog>hexo new post -p stm32-for-vscode "推荐一款 STM32 的 vscode 插件，stm32-for-vscode"```
+
+这条命令是新建一个文章，并且指定路径名和文章标题名，路径名通过 `-p` 指定，文章标题名在最后面，并且用双引号括起来，以为文章标题包含空格。
+
 ### generate 生成命令（g）
 
 ```$ hexo generate```
