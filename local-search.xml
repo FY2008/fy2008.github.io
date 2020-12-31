@@ -4,6 +4,70 @@
   
   
   <entry>
+    <title>存储器类型介绍</title>
+    <link href="/2020/12/30/memorizer-type/"/>
+    <url>/2020/12/30/memorizer-type/</url>
+    
+    <content type="html"><![CDATA[<p>在学习单片机的时候，老是忘记各种存储器<code>RAM</code>,<code>ROM</code>,<code>FLASH</code>等等类型的一些区别，这里做个笔记来记录一些常用的存储器类型。</p><p>存储器按是否易失分为：易失型和非易失型</p><h2 id="易失型-RAM"><a href="#易失型-RAM" class="headerlink" title="易失型 RAM"></a>易失型 RAM</h2><ul><li>DRAM<ul><li>SDRAM</li><li>DDR SDRAM</li><li>DDRII SDRAM</li><li>DDRIII SDRAM</li></ul></li><li>SRAM</li></ul><h3 id="DRAM"><a href="#DRAM" class="headerlink" title="DRAM"></a>DRAM</h3><p>动态随机存取存储器（<code>Dynamic Random Access Memory，DRAM</code>）是一种半导体存储器，主要的作用原理是利用电容内存储电荷的多寡来代表一个二进制比特（<code>bit</code>）是<code>1</code>还是<code>0</code>。由于在现实中晶体管会有漏电电流的现象，导致电容上所存储的电荷数量并不足以正确的判别数据，而导致数据毁损。因此对于<code>DRAM</code>来说，周期性地充电是一个无可避免的要件。由于这种需要定时刷新的特性，因此被称为“动态”存储器。相对来说，静态存储器（<code>SRAM</code>）只要存入数据后，纵使不刷新也不会丢失记忆</p><h3 id="SRAM"><a href="#SRAM" class="headerlink" title="SRAM"></a>SRAM</h3><p>静态随机存取存储器（<code>Static Random-Access Memory，SRAM</code>）是随机存取存储器的一种。所谓的“静态”，是指这种存储器只要保持通电，里面储存的数据就可以恒常保持。相对之下，动态随机存取存储器（<code>DRAM</code>）里面所储存的数据就需要周期性地更新。然而，当电力供应停止时，<code>SRAM</code>储存的数据还是会消失（被称为<code>volatile memory</code>），这与在断电后还能储存资料的<code>ROM</code>或闪存是不同的。</p><h3 id="SDRAM"><a href="#SDRAM" class="headerlink" title="SDRAM"></a>SDRAM</h3><p>同步动态随机存取内存（<code>synchronous dynamic random-access memory</code>，简称<code>SDRAM</code>）是有一个同步接口的动态随机存取内存（<code>DRAM</code>）。通常<code>DRAM</code>是有一个异步接口的，这样它可以随时响应控制输入的变化。而<code>SDRAM</code>有一个同步接口，在响应控制输入前会等待一个时钟信号，这样就能和计算机的系统总线同步。时钟被用来驱动一个有限状态机，对进入的指令进行管线(<code>Pipeline</code>)操作。这使得<code>SDRAM</code>与没有同步接口的异步<code>DRAM</code>(<code>asynchronous DRAM</code>)相比，可以有一个更复杂的操作模式。</p><h2 id="非易失型-ROM"><a href="#非易失型-ROM" class="headerlink" title="非易失型 ROM"></a>非易失型 ROM</h2><ul><li>ROM<ul><li>MASK ROM</li><li>PROM<ul><li>OTPROM</li><li>EPROM</li><li>EEPROM</li></ul></li></ul></li><li>FLASH<ul><li>NOR FLASH</li><li>NAND FLASH</li></ul></li></ul><h3 id="ROM"><a href="#ROM" class="headerlink" title="ROM"></a>ROM</h3><p>只读存储器（Read-Only Memory，ROM）以非破坏性读出方式工作，只能读出无法写入信息。信息一旦写入后就固定下来，即使切断电源，信息也不会丢失，所以又称为固定存储器。ROM所存数据通常是装入整机前写入的，整机工作过程中只能读出，不像随机存储器能快速方便地改写存储内容。ROM所存数据稳定 ，断电后所存数据也不会改变，并且结构较简单，使用方便，因而常用于存储各种固定程序和数据。</p><h3 id="MASK-ROM"><a href="#MASK-ROM" class="headerlink" title="MASK ROM"></a>MASK ROM</h3><p>掩膜只读存储器（<code>Mask ROM</code>）中存储的信息由生产厂家在掩膜工艺过程中“写入”。在制造过程中，将资料以一特制光罩（<code>Mask</code>）烧录于线路中，有时又称为“光罩式只读内存”（<code>Mask ROM</code>），此内存的制造成本较低，常用于电脑中的开机启动。其行线和列线的交点处都设置了MOS管，在制造时的最后一道掩膜工艺，按照规定的编码布局来控制<code>MOS</code>管是否与行线、列线相连。相连者定为1（或0），未连者为0（或1），这种存储器一旦由生产厂家制造完毕，用户就无法修改。</p><p><code>MROM</code>的主要优点是存储内容固定，掉电后信息仍然存在,可靠性高。缺点是信息一次写入（制造）后就不能修改，很不灵活且生产周期长，用户与生产厂家之间的依赖性大。</p><h3 id="PROM-可编程只读存储器"><a href="#PROM-可编程只读存储器" class="headerlink" title="PROM - 可编程只读存储器"></a>PROM - 可编程只读存储器</h3><p>可编程只读存储器（<code>Programmable ROM，PROM</code>）允许用户通过专用的设备（编程器）一次性写入自己所需要的信息，其一般可编程一次，<code>PROM</code>存储器出厂时各个存储单元皆为1，或皆为0。用户使用时，再使用编程的方法使<code>PROM</code>存储所需要的数据。</p><p><code>PROM</code>的种类很多，需要用电和光照的方法来编写与存放的程序和信息。但仅仅只能编写一次，第一次写入的信息就被永久性地保存起来。例如，双极性<code>PROM</code>有两种结构：一种是熔丝烧断型，一种是<code>PN</code>结击穿型。它们只能进行一次性改写，一旦编程完毕，其内容便是永久性的。由于可靠性差，又是一次性编程，较少使用。<code>PROM</code>中的程序和数据是由用户利用专用设备自行写入，一经写入无法更改，永久保存。<code>PROM</code>具有一定的灵活性，适合小批量生产，常用于工业控制机或电器中。</p><h3 id="OTPROM-一次编程只读内存"><a href="#OTPROM-一次编程只读内存" class="headerlink" title="OTPROM - 一次编程只读内存"></a>OTPROM - 一次编程只读内存</h3><p>一次编程只读内存（<code>One Time Programmable Read Only Memory，OTPROM</code>）之写入原理同<code>EPROM</code>，但是为了节省成本，编程写入之后就不再抹除，因此不设置透明窗。</p><h3 id="EPROM-可编程可擦除只读存储器"><a href="#EPROM-可编程可擦除只读存储器" class="headerlink" title="EPROM - 可编程可擦除只读存储器"></a>EPROM - 可编程可擦除只读存储器</h3><p>可编程可擦除只读存储器（<code>Erasable Programmable Read Only Memory，EPROM</code>）可多次编程，是一种以读为主的可写可读的存储器。是一种便于用户根据需要来写入，并能把已写入的内容擦去后再改写的<code>ROM</code>。其存储的信息可以由用户自行加电编写，也可以利用紫外线光源或脉冲电流等方法先将原存的信息擦除，然后用写入器重新写入新的信息。 <code>EPROM</code>比<code>MROM</code>和<code>PROM</code>更方便、灵活、经济实惠。但是<code>EPROM</code>采用<code>MOS</code>管，速度较慢。</p><h3 id="EEPROM"><a href="#EEPROM" class="headerlink" title="EEPROM"></a>EEPROM</h3><p>电可擦可编程序只读存储器（<code>Electrically Erasable Programmable Read-Only Memory，EEPROM</code>）是一种随时可写入而无须擦除原先内容的存储器，其写操作比读操作时间要长得多，<code>EEPROM</code>把不易丢失数据和修改灵活的优点组合起来，修改时只需使用普通的控制、地址和数据总线。<code>EEPROM</code>运作原理类似<code>EPROM</code>，但抹除的方式是使用高电场来完成，因此不需要透明窗。 <code>EEPROM</code>比 <code>EPROM</code>贵，集成度低，成本较高，一般用于保存系统设置的参数、<code>IC</code>卡上存储信息、电视机或空调中的控制器。但由于其可以在线修改，所以可靠性不如 <code>EPROM</code>。</p><h3 id="FLASH"><a href="#FLASH" class="headerlink" title="FLASH"></a>FLASH</h3><p>快擦除读写存储器(<code>Flash Memory</code>)是英特尔公司90年代中期发明的一种高密度、非易失性的读/写半导体存储器它既有<code>EEPROM</code>的特点，又有<code>RAM</code>的特点，是一种全新的存储结构，俗称快闪存储器。它在20世纪80年代中后期首次推出，快闪存储器的价格和功能介于 <code>EPROM</code>和<code>EEPROM</code>之间。与 <code>EEPROM</code>一样，快闪存储器使用电可擦技术，整个快闪存储器可以在一秒钟至几秒内被擦除，速度比 <code>EPROM</code>快得多。另外，它能擦除存储器中的某些块，而不是整块芯片。然而快闪存储器不提供字节级的擦除，与 <code>EPROM</code>一样，快闪存储器每位只使用一个晶体管，因此能获得与 <code>EPROM</code>一样的高密度(与 <code>EEPROM</code>相比较)。“闪存”芯片采用单一电源（3V或者5V）供电，擦除和编程所需的特殊电压由芯片内部产生，因此可以在线系统擦除与编程。“闪存”也是典型的非易失性存储器，在正常使用情况下，其浮置栅中所存电子可保存100年而不丢失。</p><h3 id="NOR-FLASH-于-NAND-FLASH"><a href="#NOR-FLASH-于-NAND-FLASH" class="headerlink" title="NOR FLASH 于 NAND FLASH"></a>NOR FLASH 于 NAND FLASH</h3><p>是市场上两种主要的非易失闪存技术之一。<code>Intel</code>于1988年首先开发出<code>NOR Flash</code> 技术，彻底改变了原先由<code>EPROM</code>(<code>Erasable Programmable Read-Only-Memory</code>电可编程序只读存储器)和<code>EEPROM</code>(电可擦只读存储器<code>Electrically Erasable Programmable Read - Only Memory</code>)一统天下的局面。紧接着，1989年，东芝公司发表了<code>NAND Flash</code> 结构，强调降低每比特的成本，有更高的性能，并且像磁盘一样可以通过接口轻松升级。<code>NOR Flash</code> 的特点是芯片内执行（<code>XIP ，eXecute In Place</code>），这样应用程序可以直接在<code>Flash</code>闪存内运行，不必再把代码读到系统<code>RAM</code>中。<code>NOR</code> 的传输效率很高，在1~4MB的小容量时具有很高的成本效益，但是很低的写入和擦除速度大大影响到它的性能。<code>NAND</code>的结构能提供极高的单元密度，可以达到高存储密度，并且写入和擦除的速度也很快。应用<code>NAND</code>的困难在于<code>Flash</code>的管理需要特殊的系统接口。通常读取<code>NOR</code>的速度比<code>NAND</code>稍快一些，而<code>NAND</code>的写入速度比<code>NOR</code>快很多，在设计中应该考虑这些情况。</p><p>关于更详细的 <code>NOR FLASH</code> 和 <code>NAND FLASH</code> 讲解请看下面这篇文章：<br><a href="https://www.cnblogs.com/iriczhao/p/12128451.html">https://www.cnblogs.com/iriczhao/p/12128451.html</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>存储器</tag>
+      
+      <tag>ROM</tag>
+      
+      <tag>RAM</tag>
+      
+      <tag>FLASH</tag>
+      
+      <tag>SDRAM</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>STM32 GPIO 寄存器</title>
+    <link href="/2020/12/30/stm32-gpio/"/>
+    <url>/2020/12/30/stm32-gpio/</url>
+    
+    <content type="html"><![CDATA[<p>本篇文章来了解下 <code>stm32</code> 的 <code>gpio</code> 寄存器，<code>STM32</code>的<code>GPIO</code>共有11个寄存器，下面来详细介绍：</p><p>每个通用 <code>I/O</code> 端口都有一下寄存器</p><ul><li>4 个 32 位配置寄存器（<code>GPIOx_MODER</code>、<code>GPIOx_OTYPER</code>、<code>GPIOx_OSPEEDR</code> 和 <code>GPIOx_PUPDR</code>）</li><li>2个32位数据寄存器(<code>GPIOx_IDR</code> 和 <code>GPIOx_ODR</code>)</li><li>1个32位置位/复位寄存器(<code>GPIOx_BSRR</code>)</li><li>1个16位复位寄存器(<code>GPIOx_BRR</code>)</li><li>1个32位锁定寄存器(<code>GPIOx_LCKR</code>)</li><li>2 个 32 位复用功能选择寄存器（<code>GPIOx_AFRH</code> 和 <code>GPIOx_AFRL</code>）</li></ul><h2 id="GPIO-主要特性"><a href="#GPIO-主要特性" class="headerlink" title="GPIO 主要特性"></a>GPIO 主要特性</h2><ul><li>受控 <code>I/O</code> 多达 16 个</li><li>输出状态：推挽或开漏 + 上拉/下拉</li><li>从输出数据寄存器 (<code>GPIOx_ODR</code>) 或外设（复用功能输出）输出数据</li><li>可为每个 <code>I/O</code> 选择不同的速度</li><li>输入状态：浮空、上拉/下拉、模拟</li><li>将数据输入到输入数据寄存器 (<code>GPIOx_IDR</code>) 或外设（复用功能输入）</li><li>置位和复位寄存器 (<code>GPIOx_BSRR</code>)，对 <code>GPIOx_ODR</code> 具有按位写权限</li><li>锁定机制 (<code>GPIOx_LCKR</code>)，可冻结 <code>I/O</code> 配置</li><li>模拟功能</li><li>复用功能输入/输出选择寄存器（一个 <code>I/O</code> 最多可具有 16 个复用功能）</li><li>快速翻转，每次翻转最快只需要两个时钟周期</li><li>引脚复用非常灵活，允许将 <code>I/O</code> 引脚用作 <code>GPIO</code> 或多种外设功能中的一种</li></ul><p>每个<code>I/O</code>端口位可以自由编程，然而必须按照32位字访问<code>I/O</code>端口寄存器(不允许半字或字节访问)。</p><p><code>GPIOx_BSRR</code>和<code>GPIOx_BRR</code>寄存器允许对任何<code>GPIO</code>寄存器进行读/更改的独立访问；这样，在读和更改访问之间产生<code>IRQ</code>时不会发生危险。</p><h2 id="GPIO-功能描述"><a href="#GPIO-功能描述" class="headerlink" title="GPIO 功能描述"></a>GPIO 功能描述</h2><p>根据数据手册中列出的每个 I/O 端口的特性，可通过软件将通用 I/O (GPIO) 端口的各个端口 位分别配置为多种模式：</p><ul><li>输入浮空</li><li>输入上拉</li><li>输入下拉</li><li>模拟功能</li><li>具有上拉或下拉功能的开漏输出</li><li>具有上拉或下拉功能的推挽输出</li><li>具有上拉或下拉功能的复用功能推挽</li><li>具有上拉或下拉功能的复用功能开漏</li></ul><p>下图给出了一个<code>I/O</code>端口位的基本结构。</p><p><img src="/img/stm32-gpio-1.png" alt="STM32 GPIO"></p><h2 id="I-O-端口控制寄存器"><a href="#I-O-端口控制寄存器" class="headerlink" title="I/O 端口控制寄存器"></a>I/O 端口控制寄存器</h2><p>每个 <code>GPIO</code> 有 4 个 32 位存储器映射的控制寄存器（<code>GPIOx_MODER</code>、<code>GPIOx_OTYPER</code>、 <code>GPIOx_OSPEEDR</code>、<code>GPIOx_PUPDR</code>），可配置多达 16 个 <code>I/O</code>。</p><ul><li><code>GPIOx_MODER</code> 寄存器用于 选择 I/O 方向（输入、输出、AF、模拟）。</li><li><code>GPIOx_OTYPER</code> 和 <code>GPIOx_OSPEEDR</code> 寄存器分 别用于选择输出类型（推挽或开漏）和速度 (无论采用哪种 I/O 方向，都会直接将 I/O 速度引 脚连接到相应的<code>GPIOx_OSPEEDR</code> 寄存器位）。无论采用哪种 <code>I/O</code> 方向，<code>GPIOx_PUPDR</code> 寄 存器都用于选择上拉/下拉。</li><li><code>GPIOx_PUPDR</code> 寄存器都用于选择上拉/下拉</li></ul><h2 id="I-O-端口数据寄存器"><a href="#I-O-端口数据寄存器" class="headerlink" title="I/O 端口数据寄存器"></a>I/O 端口数据寄存器</h2><p>每个 <code>GPIO</code> 都具有 2 个 16 位数据寄存器：输入和输出数据寄存器（<code>GPIOx_IDR</code> 和 <code>GPIOx_ODR</code>）。<code>GPIOx_ODR</code> 用于存储待输出数据，可对其进行读/写访问。通过 <code>I/O</code> 输入的数据存储到输入数据寄存器 (<code>GPIOx_IDR</code>) 中，它是一个<strong>只读寄存器</strong>。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>电子技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>STM32</tag>
+      
+      <tag>GPIO</tag>
+      
+      <tag>IO</tag>
+      
+      <tag>寄存器</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>推荐一款 STM32 的 vscode 插件，stm32-for-vscode</title>
     <link href="/2020/12/29/stm32-for-vscode/"/>
     <url>/2020/12/29/stm32-for-vscode/</url>
