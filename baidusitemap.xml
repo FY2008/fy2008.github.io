@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://fy2008.github.io/2021/01/04/stm32-freertos-key-led/</loc>
+    <lastmod>2021-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://fy2008.github.io/2020/12/31/w251xx/</loc>
+    <lastmod>2020-12-31</lastmod>
+  </url>
+  <url>
     <loc>https://fy2008.github.io/2020/12/30/stm32-gpio/</loc>
     <lastmod>2020-12-31</lastmod>
   </url>

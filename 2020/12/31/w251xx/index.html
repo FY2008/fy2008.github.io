@@ -17,9 +17,25 @@
   <meta name="description" content="峰影的博客是一个个人博客，专注于电子技术、STM32、PCB设计和开源社区、GITHUB。喜欢开源项目。">
   <meta name="author" content="zsf90">
   <meta name="keywords" content="峰影博客,峰影的博客,电子技术,STM32,PCB设计,开源社区,Github">
-  <title>归档 - 峰影的博客</title>
+  <title>w25qxx Flash使用笔记 - 峰影的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -48,7 +64,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -154,14 +170,51 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/5.jpg') no-repeat center center;
+         style="background: url('/img/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="w25qxx Flash使用笔记">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-12-31 15:54" pubdate>
+        2020年12月31日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      240 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      2
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -174,91 +227,131 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">w25qxx Flash使用笔记</h1>
+            
+              <p class="note note-info">
                 
+                  本文最后更新于：2020年12月31日 下午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p><code>w25qxx</code> 是一系列 <code>SPI Flash</code> 存储芯片的总称，这些芯片包括很多型号如：<code>w25q16</code> <code>w25q32</code> <code>w25q64</code>等。</p>
+<p><code>W25Q64</code> 的擦写周期多达 <code>10W</code> 次，具有 20 年的数据保存期限，支持电压为 <code>2.7~3.6V</code>。</p>
+<h2 id="w25q64"><a href="#w25q64" class="headerlink" title="w25q64"></a>w25q64</h2><p>W25Q64BV（64兆位）串行FLASH存储器为一个空间大小，引脚，功耗限制的系统提供解决方案。25Q系列的灵活性和性能良好超越了普通的串行FLASH设备。该芯片是理想的代码跟踪到RAM，通过两路或四路SPI（XIP）直接执行代码来存储声音，文字，数据等，只需要一个2.7V到3.6V的供电，在活跃状态是电流消耗可以低至4mA,掉电模式下可以低到1uA。所有的设备都提供节省面积的封装。</p>
+<h2 id="w25q64-编程"><a href="#w25q64-编程" class="headerlink" title="w25q64 编程"></a>w25q64 编程</h2><h3 id="方法列表"><a href="#方法列表" class="headerlink" title="方法列表"></a>方法列表</h3><ul>
+<li>w25qxx_Init(void) 初始化</li>
+<li>w25qxx_EraseChip(void) 擦除整个芯片</li>
+<li>w25qxx_EraseSector(uint32_t SectorAddr) 擦除单个扇区</li>
+<li>w25qxx_EraseBlock(uint32_t BlockAddr) 擦除单个块</li>
+<li></li>
+</ul>
 
-<div class="list-group">
-  <p class="h4">共计 9 篇文章</p>
-  <hr>
-  
-  
-    
-      
-      <p class="h5">2021</p>
-    
-    <a href="/2021/01/04/stm32-freertos-key-led/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">FreeRTOS STM32 实现LED闪烁，KEY任务挂起与恢复任务</span>
-      <time style="float: right;">01-04</time>
-    </a>
-  
-    
-      
-      <p class="h5">2020</p>
-    
-    <a href="/2020/12/31/w251xx/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">w25qxx Flash使用笔记</span>
-      <time style="float: right;">12-31</time>
-    </a>
-  
-    
-    <a href="/2020/12/30/memorizer-type/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">存储器类型介绍</span>
-      <time style="float: right;">12-30</time>
-    </a>
-  
-    
-    <a href="/2020/12/30/stm32-gpio/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">STM32 GPIO 寄存器</span>
-      <time style="float: right;">12-30</time>
-    </a>
-  
-    
-    <a href="/2020/12/29/stm32-for-vscode/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">推荐一款 STM32 的 vscode 插件，stm32-for-vscode</span>
-      <time style="float: right;">12-29</time>
-    </a>
-  
-    
-    <a href="/2020/12/29/msys2-command/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">MSYS2 命令笔记</span>
-      <time style="float: right;">12-29</time>
-    </a>
-  
-    
-    <a href="/2020/12/29/stm32-vscode-dev/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">用 VSCode 开发 STM32 项目</span>
-      <time style="float: right;">12-29</time>
-    </a>
-  
-    
-    <a href="/2020/12/28/Hexo-%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Hexo 配置笔记</span>
-      <time style="float: right;">12-28</time>
-    </a>
-  
-    
-    <a href="/2020/12/28/hello-world/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Hello World</span>
-      <time style="float: right;">12-28</time>
-    </a>
-  
-</div>
-
-
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">电子技术</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/w5qxx/">w5qxx</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/01/04/stm32-freertos-key-led/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">FreeRTOS STM32 实现LED闪烁，KEY任务挂起与恢复任务</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/12/30/memorizer-type/">
+                        <span class="hidden-mobile">存储器类型介绍</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    <script>
+      Fluid.utils.waitElementVisible('disqus_thread', function() {
+        Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqusjs.css');
+        Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqus.js', function () {
+          new DisqusJS({
+            shortname: 'demo',
+            apikey: 'AAy1C4DFz9M53p1E8j2sRcbWu6UnisFOEYLamItnJM9vMSdNpYmogcVzpVgdYy8e'
+          });
+        });
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the
+      <a target="_blank" href="https://disqus.com/?ref_noscript" rel="nofollow noopener noopener">comments powered by Disqus.</a>
+    </noscript>
+  </div>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -363,9 +456,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 

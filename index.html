@@ -191,6 +191,116 @@
   <div class="row mx-auto index-card">
     
     
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/04/stm32-freertos-key-led/">FreeRTOS STM32 实现LED闪烁，KEY任务挂起与恢复任务</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/01/04/stm32-freertos-key-led/">
+          
+          
+            
+          
+          这两天跟着哔哩哔哩学习了下 FreeRTOS，这里把学习中实现的一个入门代码分享出来。
+功能这里实现的功能是，共有连个任务，一个 LED 闪烁任务、一个KEY按键任务，通过判断按键是否按下来执行挂起任务和恢复任务。
+
+按键按下
+挂起LED任务 vTaskSuspend(defaultTaskHandle);
+
+
+按键松开
+恢复LED任务 vTaskResume(defaultTaskHandle)
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-04 10:14" pubdate>
+              2021-01-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">电子技术</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/STM32/">STM32</a>
+            
+              <a href="/tags/FreeRTOS/">FreeRTOS</a>
+            
+              <a href="/tags/%E7%BC%96%E7%A8%8B/">编程</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/12/31/w251xx/">w25qxx Flash使用笔记</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/12/31/w251xx/">
+          
+          
+            
+          
+          w25qxx 是一系列 SPI Flash 存储芯片的总称，这些芯片包括很多型号如：w25q16 w25q32 w25q64等。
+W25Q64 的擦写周期多达 10W 次，具有 20 年的数据保存期限，支持电压为 2.7~3.6V。
+w25q64W25Q64BV（64兆位）串行FLASH存储器为一个空间大小，引脚，功耗限制的系统提供解决方案。25Q系列的灵活性和性能良好超越了普通的串行FLASH设
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-31 15:54" pubdate>
+              2020-12-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">电子技术</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/w5qxx/">w5qxx</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/12/30/memorizer-type/" target="_self">
           <img src="/img/nand-flash.jpg" srcset="/img/loading.gif" alt="存储器类型介绍">

@@ -6,7 +6,7 @@
   <link href="https://fy2008.github.io/atom.xml" rel="self"/>
   
   <link href="https://fy2008.github.io/"/>
-  <updated>2020-12-30T12:01:01.946Z</updated>
+  <updated>2021-01-04T04:18:40.715Z</updated>
   <id>https://fy2008.github.io/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FreeRTOS STM32 实现LED闪烁，KEY任务挂起与恢复任务</title>
+    <link href="https://fy2008.github.io/2021/01/04/stm32-freertos-key-led/"/>
+    <id>https://fy2008.github.io/2021/01/04/stm32-freertos-key-led/</id>
+    <published>2021-01-04T02:14:20.000Z</published>
+    <updated>2021-01-04T04:18:40.715Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这两天跟着&lt;code&gt;哔哩哔哩&lt;/code&gt;学习了下 &lt;code&gt;FreeRTOS&lt;/code&gt;，这里把学习中实现的一个入门代码分享出来。&lt;/p&gt;
+&lt;h2 id=&quot;功能&quot;&gt;&lt;a href=&quot;#功能&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="电子技术" scheme="https://fy2008.github.io/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="STM32" scheme="https://fy2008.github.io/tags/STM32/"/>
+    
+    <category term="FreeRTOS" scheme="https://fy2008.github.io/tags/FreeRTOS/"/>
+    
+    <category term="编程" scheme="https://fy2008.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>w25qxx Flash使用笔记</title>
+    <link href="https://fy2008.github.io/2020/12/31/w251xx/"/>
+    <id>https://fy2008.github.io/2020/12/31/w251xx/</id>
+    <published>2020-12-31T07:54:31.000Z</published>
+    <updated>2020-12-31T08:19:26.571Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;code&gt;w25qxx&lt;/code&gt; 是一系列 &lt;code&gt;SPI Flash&lt;/code&gt; 存储芯片的总称，这些芯片包括很多型号如：&lt;code&gt;w25q16&lt;/code&gt; &lt;code&gt;w25q32&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="电子技术" scheme="https://fy2008.github.io/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="w5qxx" scheme="https://fy2008.github.io/tags/w5qxx/"/>
+    
+  </entry>
   
   <entry>
     <title>存储器类型介绍</title>
