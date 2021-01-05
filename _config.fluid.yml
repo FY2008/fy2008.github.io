@@ -366,7 +366,9 @@ footer:
     <a href="https://hexo.io" target="_blank" rel="nofollow noopener" title="Hexo"><span>Hexo</span></a> | 
     主题 
     <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener" title="Fluid 主题"><span>Fluid</span></a> | 
-    <a href="https://www.github.com/fy2008" target="_blank" title="我的Github"><span>Github</span></a>
+    <a href="https://www.github.com/fy2008" target="_blank" title="我的Github"><span>Github</span></a> | 
+    <a href="/sitemap.xml">sitemap</a> | 
+    <a href="/baidusitemap.xml">百度网站地图</a>
   '
 
   # 展示网站的 PV、UV 统计数
@@ -851,6 +853,12 @@ links:
   # 友链的成员项
   # Member item of page
   items:
+    - {
+      title: "意法半导体",
+      intro: "意法半导体是一家国际性的半导体生产商，总部位于瑞士日内瓦。",
+      link: "https://www.st.com/",
+      image: "/img/st-logo.png"
+    }
     - {
       title: "Iconfont-阿里巴巴矢量图标库",
       intro: "Iconfont-阿里巴巴矢量图标库，国内功能很强大且图标内容很丰富的矢量图标库，提供矢量图标下载、在线存储、格式转换等功能",

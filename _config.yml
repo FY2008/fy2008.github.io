@@ -5,8 +5,8 @@
 # Site
 title: 峰影的博客
 subtitle: '电子爱好者'
-description: ''
-keywords:
+description: '峰影的博客是一个个人博客，专注于电子技术、STM32、PCB设计和开源社区、GITHUB。喜欢开源项目。'
+keywords: '峰影博客,峰影的博客,电子技术,STM32,PCB设计,开源社区,Github'
 author: zsf90
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -122,3 +122,10 @@ feed:
   icon: icon.png
   autodiscovery: true
   template:
+
+# 网站地图配置
+sitemap:
+	path: sitemap.xml
+
+baidusitemap:
+	path: baidusitemap.xml
