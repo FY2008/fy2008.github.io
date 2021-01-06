@@ -6,7 +6,7 @@
   <link href="https://fy2008.github.io/atom.xml" rel="self"/>
   
   <link href="https://fy2008.github.io/"/>
-  <updated>2021-01-04T04:38:33.561Z</updated>
+  <updated>2021-01-06T05:07:27.444Z</updated>
   <id>https://fy2008.github.io/</id>
   
   <author>
@@ -17,11 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>STM32 USART 函数列表和一些类型定义</title>
+    <link href="https://fy2008.github.io/2021/01/05/stm32-hal-uart-1/"/>
+    <id>https://fy2008.github.io/2021/01/05/stm32-hal-uart-1/</id>
+    <published>2021-01-05T10:05:06.000Z</published>
+    <updated>2021-01-06T05:07:27.444Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本篇文章是一篇介绍 STM32 USART 相关函数的笔记，下次忘记的时候可以方便查找。&lt;/p&gt;
+&lt;h2 id=&quot;串口寄存器列表&quot;&gt;&lt;a href=&quot;#串口寄存器列表&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="电子技术" scheme="https://fy2008.github.io/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="STM32" scheme="https://fy2008.github.io/tags/STM32/"/>
+    
+    <category term="USART" scheme="https://fy2008.github.io/tags/USART/"/>
+    
+    <category term="串口" scheme="https://fy2008.github.io/tags/%E4%B8%B2%E5%8F%A3/"/>
+    
+    <category term="函数" scheme="https://fy2008.github.io/tags/%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>FreeRTOS STM32 实现LED闪烁，KEY任务挂起与恢复任务</title>
     <link href="https://fy2008.github.io/2021/01/04/stm32-freertos-key-led/"/>
     <id>https://fy2008.github.io/2021/01/04/stm32-freertos-key-led/</id>
     <published>2021-01-04T02:14:20.000Z</published>
-    <updated>2021-01-04T04:38:33.561Z</updated>
+    <updated>2021-01-06T05:08:59.183Z</updated>
     
     
       
