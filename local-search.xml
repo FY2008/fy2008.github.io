@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>C语言中&quot;return;&quot;的使用介绍</title>
+    <link href="/2021/01/06/c-language-return-semicolon/"/>
+    <url>/2021/01/06/c-language-return-semicolon/</url>
+    
+    <content type="html"><![CDATA[<p>在 <code>C语言</code>中 <code>return;</code> 用于从返回值为 <code>void</code> 的函数中强制结束函数，把程序的控制权交给函数的调用者。</p><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">demo</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a)</span></span>&#123;<br>    <span class="hljs-keyword">if</span> (a &lt; <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;a 小于0\n&quot;</span>);<br>        <span class="hljs-keyword">return</span>; <span class="hljs-comment">// 直接跳出函数</span><br>    &#125;<br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;测试能否执行到这里\n&quot;</span>); <span class="hljs-comment">// 如果 a &lt; 0, 则这条语句不会被执行到</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    demo(<span class="hljs-number">-5</span>);<br>    <span class="hljs-comment">//demo(5);</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure><p><code>return;</code> 用在返回值为 <code>void</code> 的函数中的场景很多，所有有必要掌握使用它。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C语言</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>STM32 USART 函数列表和一些类型定义</title>
     <link href="/2021/01/05/stm32-hal-uart-1/"/>
     <url>/2021/01/05/stm32-hal-uart-1/</url>

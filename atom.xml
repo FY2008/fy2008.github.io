@@ -6,7 +6,7 @@
   <link href="https://fy2008.github.io/atom.xml" rel="self"/>
   
   <link href="https://fy2008.github.io/"/>
-  <updated>2021-01-06T05:13:49.859Z</updated>
+  <updated>2021-01-06T06:51:31.839Z</updated>
   <id>https://fy2008.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C语言中&quot;return;&quot;的使用介绍</title>
+    <link href="https://fy2008.github.io/2021/01/06/c-language-return-semicolon/"/>
+    <id>https://fy2008.github.io/2021/01/06/c-language-return-semicolon/</id>
+    <published>2021-01-06T06:36:20.000Z</published>
+    <updated>2021-01-06T06:51:31.839Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在 &lt;code&gt;C语言&lt;/code&gt;中 &lt;code&gt;return;&lt;/code&gt; 用于从返回值为 &lt;code&gt;void&lt;/code&gt; 的函数中强制结束函数，把程序的控制权交给函数的调用者。&lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://fy2008.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="C语言" scheme="https://fy2008.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
   
   <entry>
     <title>STM32 USART 函数列表和一些类型定义</title>
