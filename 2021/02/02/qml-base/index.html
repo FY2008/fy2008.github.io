@@ -1,0 +1,587 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="峰影的博客是一个个人博客，专注于电子技术、STM32、PCB设计和开源社区、GITHUB。喜欢开源项目。">
+  <meta name="author" content="zsf90">
+  <meta name="keywords" content="峰影博客,峰影的博客,电子技术,STM32,PCB设计,开源社区,Github">
+  <title>QML 基础 - 峰影的博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"fy2008.github.io","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":"f2c2c29ba089bbe747d17255f0afdb56","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21050229,"cnzz":null,"leancloud":{"app_id":"21vmNUBs7rFRciAemNv5usxG-gzGzoHsz","app_key":"kMbwFAh9m1RUo216tJgCkNR0","server_url":"https://21vmnubs.lc-cn-n1-shared.com"}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="峰影的博客" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>峰影的博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="QML 基础">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-02 19:35" pubdate>
+        2021年2月2日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      17
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">QML 基础</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月3日 凌晨
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p><code>QML</code> 是一种类似 <code>CSS</code> 与 <code>JavaScript</code> 相结合的描述用户界面的语言。</p>
+<p><code>QML</code> 实现并扩展了 <code>ECMAScript</code>，是一备战说明性语言，用来描述基于 <code>Qt</code> 对象系统的用户界面。<code>QML</code> 提供了高可读性的，声明式的、类 <code>CSS</code> 的语法，支持结合动态属性绑定的 <code>ECMAScript</code> 表达式。</p>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p><code>QML</code> 文件的后缀是 <code>.qml</code>,其实就是文本文件。简单的 QML 文件：</p>
+<figure class="highlight qml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs qml"><span class="hljs-keyword">import</span> QtQuick <span class="hljs-number">2.12</span><br><span class="hljs-keyword">import</span> QtQuick.Window <span class="hljs-number">2.12</span><br><br><span class="hljs-title">Window</span> &#123;<br>    <span class="hljs-attribute">id:</span><span class="hljs-string"> root</span><br>    <span class="hljs-attribute">visible</span>: <span class="hljs-literal">true</span><br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">640</span><br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">480</span><br>    <span class="hljs-attribute">title</span>: qsTr(<span class="hljs-string">&quot;Hello World&quot;</span>)<br>    <span class="hljs-attribute">minimumWidth</span>: <span class="hljs-number">400</span>   <span class="hljs-comment">// 窗口最小宽度</span><br>    <span class="hljs-attribute">minimumHeight</span>: <span class="hljs-number">250</span>  <span class="hljs-comment">// 窗口最小高度</span><br><br>    <span class="hljs-title">Text</span> &#123;<br>        <span class="hljs-attribute">id:</span><span class="hljs-string"> textHello</span><br>        <span class="hljs-attribute">anchors.centerIn</span>: <span class="hljs-built_in">parent</span><br>        <span class="hljs-attribute">text</span>: qsTr(<span class="hljs-string">&quot;Hello,World&quot;</span>)<br>        <span class="hljs-attribute">font.pointSize</span>: <span class="hljs-number">24</span><br>        <span class="hljs-attribute">font.bold</span>: <span class="hljs-literal">true</span><br>        <span class="hljs-attribute">color</span>: <span class="hljs-string">&quot;#008787&quot;</span><br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>QML 通过 <code>import xxx</code> 方式导入相关模块。</p>
+<p>Rectangle {} 语句，定以了一个类型为 Rectangle 的对象。对象要用一对花括号来描述，花括号前要写上对象的类型名字（类名）。</p>
+<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><p>QML 支持 ECMAScript 表达式。你可以在样初始化 Rectangle 对象的宽、高属性：</p>
+<figure class="highlight qml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs qml"><span class="hljs-title">Rectangle</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">22</span>*<span class="hljs-number">10</span><br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">2</span>*<span class="hljs-number">4</span><br>    <span class="hljs-attribute">color</span>: <span class="hljs-string">&quot;#ccc&quot;</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="引用对象"><a href="#引用对象" class="headerlink" title="引用对象"></a>引用对象</h2><p>QML中用对象的 id 值来引用一个对象。</p>
+<figure class="highlight qml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs qml"><span class="hljs-title">Rectangle</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">320</span><br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">480</span><br><br>    <span class="hljs-title">Button</span> &#123;<br>        <span class="hljs-attribute">id:</span><span class="hljs-string"> openFile</span><br>        <span class="hljs-attribute">text</span>: <span class="hljs-string">&quot;打开&quot;</span><br>    &#125;<br><br>    <span class="hljs-title">Button</span> &#123;<br>        <span class="hljs-attribute">id:</span><span class="hljs-string"> quit</span><br>        <span class="hljs-attribute">text</span>: <span class="hljs-string">&quot;退出&quot;</span><br>        <span class="hljs-attribute">anchors.left</span>: openFile.right<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p><code>anchors.left: openFile.right</code> 这句就是使用引用的例子</p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p><code>QML</code> 中的注释方式种 c<code>++</code> 中的一样。</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>其实，<code>QML</code> 中的属性，对应于我们非常熟悉的 <code>C++</code>、<code>Java</code> 中类的成员变量…</p>
+<h3 id="属性命名"><a href="#属性命名" class="headerlink" title="属性命名"></a>属性命名</h3><p>属性名的首字母一般以小写开始，如果属性名以多个单词表示，那么第二个及以后的单词，首字母大写。这也是驼峰命名法。</p>
+<h3 id="属性的类型"><a href="#属性的类型" class="headerlink" title="属性的类型"></a>属性的类型</h3><p>可以在 <code>QML</code> 文档中使用的类型大概有三类：</p>
+<ul>
+<li>由 <code>QML</code> 语言本身提供的类型。</li>
+<li>由 <code>QML</code> 模块（比如 <code>Qt</code> <code>Quick</code>）提供的类型。</li>
+<li>导出到 <code>QML</code> 环境中的 <code>C++</code> 类型。</li>
+</ul>
+<h4 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h4><p><code>QML</code> 支持的基本类型包括 <code>int</code>、<code>real</code>、<code>double</code>、<code>bool</code>、<code>string</code>、<code>color</code>、<code>list</code>、<code>font</code>等。</p>
+<p>请使用 <code>Qt</code>帮助的索引模式，以“qml basic types“为关键字检索，找到 <code>QML Basic Types</code> 页面来查看完整的类型列表和每种类型的详情。</p>
+<p><code>Qt</code> 的 <code>QML</code> 模块还为<code>QML</code> 引入了很多Qt相关的类型，如：<code>Qt</code>、<code>QtObject</code>、<code>Component</code>、<code>Connections</code>、<code>Binding</code>等，请使用 <code>Qt</code> 帮助检索 “qt qml qml types“来了解。</p>
+<h4 id="id属性"><a href="#id属性" class="headerlink" title="id属性"></a>id属性</h4><p>一个对象的 <code>id</code> 属性是唯一的，在同一个 <code>QML</code> 文件中不同对象的 <code>id</code> 属性的值不能重复。</p>
+<h4 id="列表属性"><a href="#列表属性" class="headerlink" title="列表属性"></a>列表属性</h4><p><code>QML</code> 对象的列表属性（类型是 <code>list</code>）类似于下面这样：</p>
+<figure class="highlight qml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs qml"><span class="hljs-title">Item</span> &#123;<br>    <span class="hljs-attribute">children</span>: [<br>        <span class="hljs-title">Image</span> &#123;&#125;,<br>        <span class="hljs-title">Text</span> &#123;&#125;<br>    ]<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>列表是包含在方括号内，以逗号分隔的多个元素的集合。<br>其实列表和 <code>ECMAScript</code> 的数组（<code>Array</code>）是类似的，其访问方式也一样：</p>
+<ul>
+<li>可以用[value1,value2,…,valueN]这种形式给 <code>list</code> 对象赋值</li>
+<li><code>length</code> 属性提供了列表内元素的个数</li>
+<li>列表内的元素通过数组下标来放问([index])</li>
+</ul>
+<p>值得注意的是，列表内只能包含<code>QML</code>对象，不能包含任何基本类型的字面量（如：<code>9</code>、<code>true</code>，如果非要包含，需要使用 <code>var</code> 变量）。</p>
+<figure class="highlight qml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs qml"><span class="hljs-title">Item</span> &#123;<br>    <span class="hljs-attribute">children</span>: [<br>        <span class="hljs-title">Text</span> &#123;<br>            <span class="hljs-attribute">text</span>: <span class="hljs-string">&quot;textOne&quot;</span><br>        &#125;<br>        <span class="hljs-title">Text</span> &#123;<br>            <span class="hljs-attribute">text</span>: <span class="hljs-string">&quot;textTwo&quot;</span><br>        &#125;<br>    ]<br><br>    <span class="hljs-attribute">Component.onCompleted</span>: &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; children.length; i++) &#123;<br>            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;text of label &quot;</span>, i, <span class="hljs-string">&quot; : &quot;</span>, children[i].text)<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>如果一个列表内只的一个元素，也可以省略方括号，如下所示：</p>
+<figure class="highlight qml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs qml"><span class="hljs-title">Item</span> &#123;<br>    <span class="hljs-attribute">children</span>: <span class="hljs-title">Image</span> &#123;&#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h4 id="信号处理器"><a href="#信号处理器" class="headerlink" title="信号处理器"></a>信号处理器</h4><p>信号处理器，其实等价于 <code>Qt</code> 中的槽。它的名字还有点特别，一般是 on<Signal>这种形式。比如 <code>Qt Quick</code>中的<code>Button</code>元素有一个信号 <code>clicked()</code>，那么你可能会写出这样的代码：</p>
+<figure class="highlight qml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs qml"><span class="hljs-title">Rectangle</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">320</span><br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">480</span><br><br>    <span class="hljs-title">Button</span> &#123;<br>        <span class="hljs-attribute">id:</span><span class="hljs-string"> quit</span><br>        <span class="hljs-attribute">text</span>: <span class="hljs-string">&quot;退出&quot;</span><br>        <span class="hljs-attribute">anchors.left</span>: <span class="hljs-built_in">parent</span>.left<br>        <span class="hljs-attribute">anchors.leftMargin</span>: <span class="hljs-number">4</span><br>        <span class="hljs-attribute">anchors.bottom</span>: <span class="hljs-built_in">parent</span>.bottom<br>        <span class="hljs-attribute">anchors.bottomMargin</span>: <span class="hljs-number">4</span><br>        <span class="hljs-attribute">onClicked</span>: &#123;<br>            Qt.quit()<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>你看到了，当信号是 <code>clicked()</code> 时，信号处理器就命名为 <code>onClicked</code>。就这么简单，以 <code>on</code> 起始后跟信号名字（第一个字母大写）。</p>
+<h4 id="分组属性"><a href="#分组属性" class="headerlink" title="分组属性"></a>分组属性</h4><p>在某些情况下使用一个“.“符号或分组符号将相关的属性形成一个逻辑组。有时我们给分组属性赋值是一个个来的，类似于这样：</p>
+<figure class="highlight qml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs qml"><span class="hljs-title">Text</span> &#123;<br>    <span class="hljs-attribute">font.pixelSize</span>: <span class="hljs-number">18</span><br>    <span class="hljs-attribute">font.bold</span>: <span class="hljs-literal">true</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>其实下面这样的写法在形式上更贴合分组的含义：</p>
+<figure class="highlight qml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs qml"><span class="hljs-title">Text</span>&#123;<br>    <span class="hljs-title">font</span> &#123;<br>        <span class="hljs-attribute">pixelSize</span>: <span class="hljs-number">12</span><br>        <span class="hljs-attribute">bold</span>: <span class="hljs-literal">true</span><br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>其实中以这么理解，<code>font</code> 属性的类型本身是一个对象，这个对象又有 <code>pixelSize</code>、<code>bold</code>、<code>italic</code>、<code>underline</code> 等属性。对于类型为对象的属性值，可以使用“.”操作符展开对象的每一个成员对其赋值，也可以通过分组符号（一对花括号）把要赋值的成员放在一起给它们赋值。对于后者，其形式和对象的定义一样了，起码看起来没有区别。所以，又可以这么理解上面的示例：<code>Text</code> 对象内聚合了 <code>font</code> 对象。</p>
+<h4 id="附加属性"><a href="#附加属性" class="headerlink" title="附加属性"></a>附加属性</h4><p>在<code>QML</code> 语言的语法中，有一个附加属性（<code>attached properties</code>) 的概念，这是附加到一个对象上的额外的属性。</p>
+<p>举个例子，下面的 <code>Item</code> 对象使用了附加属性：</p>
+<figure class="highlight qml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs qml"><span class="hljs-keyword">import</span> QtQuick <span class="hljs-number">2.2</span><br><br><span class="hljs-title">Item</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">100</span><br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">100</span><br><br>    <span class="hljs-attribute">focus</span>: <span class="hljs-literal">true</span><br>    <span class="hljs-attribute">Keys.enabled</span>: <span class="hljs-literal">false</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p><code>Item</code> 对象设置 <code>Keys.enabled</code> 为 <code>false</code>，<code>Keys</code> 就是 <code>Qt Quick</code> 提供的供 <code>Item</code> 处理按键事件的附加属性。与附加属性相似的概念还有附加信号处理器。</p>
+<p>文章内容来自：《Qt Quick 核心编程》</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Qt/">Qt</a>
+                    
+                      <a class="hover-with-bg" href="/tags/QML/">QML</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/02/02/qt-quick-helloworld/">
+                        <span class="hidden-mobile">第一个 Qt Quick 程序</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    <script>
+      Fluid.utils.waitElementVisible('disqus_thread', function() {
+        Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqusjs.css');
+        Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqus.js', function () {
+          new DisqusJS({
+            shortname: 'demo',
+            apikey: 'AAy1C4DFz9M53p1E8j2sRcbWu6UnisFOEYLamItnJM9vMSdNpYmogcVzpVgdYy8e'
+          });
+        });
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the
+      <a target="_blank" href="https://disqus.com/?ref_noscript" rel="nofollow noopener noopener">comments powered by Disqus.</a>
+    </noscript>
+  </div>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     © 2020-2020 峰影(zsf90). All rights reserved.<br> <a href="/atom.xml"><span>atom.xml</span></a> |  构建 <a href="https://hexo.io" target="_blank" rel="nofollow noopener" title="Hexo"><span>Hexo</span></a> |  主题  <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener" title="Fluid 主题"><span>Fluid</span></a> |  <a href="https://www.github.com/fy2008" target="_blank" title="我的Github"><span>Github</span></a> |  <a href="/sitemap.xml">sitemap</a> |  <a href="/baidusitemap.xml">百度网站地图</a> |  <a href="https://www.51.la/?21050229" target="_blank">51拉统计</a> |  <a href="https://tongji.baidu.com/web/welcome/ico?s=f2c2c29ba089bbe747d17255f0afdb56" target="_blank">百度统计</a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?f2c2c29ba089bbe747d17255f0afdb56";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script defer type="text/javascript" src="//js.users.51.la/21050229.js"></script>
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

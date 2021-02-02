@@ -6,7 +6,7 @@
   <link href="https://fy2008.github.io/atom.xml" rel="self"/>
   
   <link href="https://fy2008.github.io/"/>
-  <updated>2021-02-02T11:22:44.904Z</updated>
+  <updated>2021-02-02T16:08:51.220Z</updated>
   <id>https://fy2008.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>QML 基础</title>
+    <link href="https://fy2008.github.io/2021/02/02/qml-base/"/>
+    <id>https://fy2008.github.io/2021/02/02/qml-base/</id>
+    <published>2021-02-02T11:35:32.000Z</published>
+    <updated>2021-02-02T16:08:51.220Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;code&gt;QML&lt;/code&gt; 是一种类似 &lt;code&gt;CSS&lt;/code&gt; 与 &lt;code&gt;JavaScript&lt;/code&gt; 相结合的描述用户界面的语言。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;QML&lt;/code&gt; 实现并扩展了</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://fy2008.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Qt" scheme="https://fy2008.github.io/tags/Qt/"/>
+    
+    <category term="QML" scheme="https://fy2008.github.io/tags/QML/"/>
+    
+  </entry>
   
   <entry>
     <title>第一个 Qt Quick 程序</title>
