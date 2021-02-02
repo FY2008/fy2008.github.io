@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://fy2008.github.io/2021/02/02/qt-quick-helloworld/</loc>
+    <lastmod>2021-02-02</lastmod>
+  </url>
+  <url>
+    <loc>https://fy2008.github.io/2021/01/31/qt-quick-Animation/</loc>
+    <lastmod>2021-01-31</lastmod>
+  </url>
+  <url>
     <loc>https://fy2008.github.io/2021/01/21/CMake/</loc>
     <lastmod>2021-01-23</lastmod>
   </url>
