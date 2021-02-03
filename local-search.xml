@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>QML ECMAScript 基础</title>
+    <link href="/2021/02/03/qml-ecmascript-base/"/>
+    <url>/2021/02/03/qml-ecmascript-base/</url>
+    
+    <content type="html"><![CDATA[<p>测试<code>ECMAScript</code>的代码可发放在 Component.onCompleted: {}</p><figure class="highlight qml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs qml"><span class="hljs-keyword">import</span> QtQuick <span class="hljs-number">2.12</span><br><br><span class="hljs-title">Rectangle</span> &#123;<br>    <span class="hljs-attribute">Component.onCompleted</span>: &#123;<br>        <span class="hljs-comment">// 这里放测试代码</span><br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>如果你熟悉 <code>C</code>、<code>C++</code>、或者<code>Java</code>，就会发现 <code>ECMAScript</code> 的语法很容易掌握。</p><h3 id="区分大小写"><a href="#区分大小写" class="headerlink" title="区分大小写"></a>区分大小写</h3><p>与<code>C++</code>一样，变量、函数名、运算符以及其他一切东西都是区分大小的。</p><h3 id="弱类型"><a href="#弱类型" class="headerlink" title="弱类型"></a>弱类型</h3><p>与<code>C++</code>不同，<code>ECMAScript</code> 中的变量没有特定的类型，定义变量时只用 <code>var</code> 运算符，可以将它初始化为任意的值，你可以随时改变变量所存储的数据类型。示例：</p><figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> background = <span class="hljs-string">&quot;white&quot;</span><br><span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span><br><span class="hljs-keyword">var</span> children = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>()<br><span class="hljs-keyword">var</span> focus = <span class="hljs-literal">true</span><br></code></pre></div></td></tr></table></figure><h3 id="语句后的分号可有可无"><a href="#语句后的分号可有可无" class="headerlink" title="语句后的分号可有可无"></a>语句后的分号可有可无</h3><p>C、C++、Java等语言都要求每条语句以分号（;）结束。ECMAScript 则允许开发者自行决定是否以分号结束一行代码。</p><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>ECMAScript 借用了 C、Java等语言的注释语法。</p><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><p>与C++类似，关键字是保留的，不能用作变量名或函数名。下面是 ECMAScript 中的关键字列表：</p><ul><li>break</li><li>case</li><li>catch</li><li>continue</li><li>default</li><li>delete</li><li>do</li><li>else</li><li>finally</li><li>for</li><li>function</li><li>if</li><li>in</li><li>instanceof</li><li>new</li><li>return</li><li>switch</li><li>this</li><li>throw</li><li>try</li><li>typeof</li><li>var</li><li>void</li><li>while</li><li>with</li></ul><h2 id="保留字"><a href="#保留字" class="headerlink" title="保留字"></a>保留字</h2><p>保留字是留给将来的，可能会作为关键字。保留字也不能用作变量名或函数名。ECMAScript 中有下列保留字：</p><ul><li>abstract</li><li>boolean</li><li>byte</li><li>char</li><li>class</li><li>const</li><li>debugger</li><li>double</li><li>enum</li><li>export</li><li>extends</li><li>final</li><li>float</li><li>goto</li><li>implements</li><li>import</li><li>int</li><li>interface</li><li>long</li><li>native</li><li>package</li><li>private</li><li>protected</li><li>public</li><li>short</li><li>static</li><li>super</li><li>synchronized</li><li>throws</li><li>transient</li><li>volatile</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Qt</tag>
+      
+      <tag>QML</tag>
+      
+      <tag>ECMAScript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>QML 基础</title>
     <link href="/2021/02/02/qml-base/"/>
     <url>/2021/02/02/qml-base/</url>
@@ -64,7 +93,7 @@
     <link href="/2021/01/31/qt-quick-Animation/"/>
     <url>/2021/01/31/qt-quick-Animation/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h2 id="常用动画"><a href="#常用动画" class="headerlink" title="常用动画"></a>常用动画</h2>]]></content>
     
     
     
