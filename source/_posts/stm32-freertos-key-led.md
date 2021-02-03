@@ -6,7 +6,7 @@ tags:
 - FreeRTOS
 - 编程
 category: 电子技术
-index_img:
+index_img: /img/NUCLEO-F410RB.webp
 banner_img: /img/8.jpg
 ---
 
