@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="峰影的博客是一个个人博客，专注于电子技术、STM32、PCB设计和开源社区、GITHUB。喜欢开源项目。">
+  <meta name="author" content="zsf90">
+  <meta name="keywords" content="峰影博客,峰影的博客,电子技术,STM32,PCB设计,开源社区,Github">
+  <title>Qt QML 颜色提取小程序 - 峰影的博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"fy2008.github.io","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":"f2c2c29ba089bbe747d17255f0afdb56","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21050229,"cnzz":null,"leancloud":{"app_id":"21vmNUBs7rFRciAemNv5usxG-gzGzoHsz","app_key":"kMbwFAh9m1RUo216tJgCkNR0","server_url":"https://21vmnubs.lc-cn-n1-shared.com"}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="峰影的博客" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>峰影的博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Qt QML 颜色提取小程序">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-05 00:07" pubdate>
+        2021年2月5日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      496 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      8
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Qt QML 颜色提取小程序</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月5日 中午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p>这篇文章来分享一个有 <code>Qt Quick</code> 写的颜色提取小程序，实现的功能很简单，在窗口左下角放置几个不同颜色的矩形，每个矩形的颜色不同，在窗口顶部中间的位置放置一个文本 <code>Text</code> ，通过点击不同颜色的矩形来给文本设置不同的颜色。</p>
+<p>该程序中用到的知识有 Qt Quick 中的 Component(组件)、自定义信号、connect等，具体看下方代码：</p>
+<h2 id="main-cpp"><a href="#main-cpp" class="headerlink" title="main.cpp"></a>main.cpp</h2><figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;QGuiApplication&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;QQmlApplicationEngine&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])</span></span><br><span class="hljs-function"></span>&#123;<br>    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);<br><br>    <span class="hljs-function">QGuiApplication <span class="hljs-title">app</span><span class="hljs-params">(argc, argv)</span></span>;<br><br>    QQmlApplicationEngine engine;<br>    <span class="hljs-function"><span class="hljs-keyword">const</span> QUrl <span class="hljs-title">url</span><span class="hljs-params">(QStringLiteral(<span class="hljs-string">&quot;qrc:/main.qml&quot;</span>))</span></span>;<br>    QObject::connect(&amp;engine, &amp;QQmlApplicationEngine::objectCreated,<br>                     &amp;app, [url](QObject *obj, <span class="hljs-keyword">const</span> QUrl &amp;objUrl) &#123;<br>        <span class="hljs-keyword">if</span> (!obj &amp;&amp; url == objUrl)<br>            QCoreApplication::<span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>);<br>    &#125;, Qt::QueuedConnection);<br>    engine.load(url);<br><br>    <span class="hljs-keyword">return</span> app.exec();<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="ColorPicker-qml"><a href="#ColorPicker-qml" class="headerlink" title="ColorPicker.qml"></a>ColorPicker.qml</h2><figure class="highlight qml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs qml"><span class="hljs-keyword">import</span> QtQuick <span class="hljs-number">2.0</span><br><br><span class="hljs-title">Rectangle</span> &#123;<br>    <span class="hljs-attribute">id:</span><span class="hljs-string"> colorPicker</span><br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">50</span><br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">30</span><br>    <span class="hljs-keyword">signal</span><span class="hljs-string"> colorPicked</span>(<span class="hljs-built_in">color</span> clr)<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">configureBorder</span>(<span class="hljs-params"></span>)</span>&#123;<br>        colorPicker.border.width = colorPicker.focus ? <span class="hljs-number">2</span> : <span class="hljs-number">0</span><br>        colorPicker.border.color = colorPicker.focus ? <span class="hljs-string">&quot;#90D750&quot;</span> : <span class="hljs-string">&quot;#808080&quot;</span><br>    &#125;<br><br>    <span class="hljs-title">MouseArea</span> &#123;<br>        <span class="hljs-attribute">anchors.fill</span>: <span class="hljs-built_in">parent</span><br>        <span class="hljs-attribute">onClicked</span>: &#123;<br>            colorPicker.colorPicked(colorPicker.color)<br>            mouse.accepted = <span class="hljs-literal">true</span><br>            colorPicker.focus = <span class="hljs-literal">true</span><br>        &#125;<br>    &#125;<br><br>    <span class="hljs-attribute">Keys.onReturnPressed</span>: &#123;<br>        colorPicker.colorPicked(colorPicker.color)<br>        event.accepted = <span class="hljs-literal">true</span><br>    &#125;<br><br>    <span class="hljs-attribute">Keys.onSpacePressed</span>: &#123;<br>        colorPicker.colorPicked(colorPicker.color)<br>        event.accepted = <span class="hljs-literal">true</span><br>    &#125;<br><br>    <span class="hljs-attribute">onFocusChanged</span>: &#123;<br>        configureBorder()<br>    &#125;<br><br>    <span class="hljs-attribute">Component.onCompleted</span>: &#123;<br>        configureBorder()<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="main-qml"><a href="#main-qml" class="headerlink" title="main.qml"></a>main.qml</h2><figure class="highlight qml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs qml"><span class="hljs-keyword">import</span> QtQuick <span class="hljs-number">2.12</span><br><span class="hljs-keyword">import</span> QtQuick.Window <span class="hljs-number">2.12</span><br><br><span class="hljs-title">Window</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">640</span><br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">480</span><br>    <span class="hljs-attribute">visible</span>: <span class="hljs-literal">true</span><br>    <span class="hljs-attribute">title</span>: qsTr(<span class="hljs-string">&quot;Hello World&quot;</span>)<br><br>    <span class="hljs-title">Rectangle</span> &#123;<br>        <span class="hljs-attribute">anchors.fill</span>: <span class="hljs-built_in">parent</span><br><br>        <span class="hljs-title">Text</span> &#123;<br>            <span class="hljs-attribute">id:</span><span class="hljs-string"> coloredText</span><br>            <span class="hljs-attribute">text</span>: qsTr(<span class="hljs-string">&quot;Hello World&quot;</span>)<br>            <span class="hljs-attribute">anchors.horizontalCenter</span>: <span class="hljs-built_in">parent</span>.horizontalCenter<br>            <span class="hljs-attribute">anchors.top</span>: <span class="hljs-built_in">parent</span>.top<br>            <span class="hljs-attribute">anchors.topMargin</span>: <span class="hljs-number">4</span><br>            <span class="hljs-attribute">font.pixelSize</span>: <span class="hljs-number">32</span><br>        &#125;<br><br>        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setTextColor</span>(<span class="hljs-params">clr</span>)</span>&#123;<br>            coloredText.color = clr<br>        &#125;<br><br>        <span class="hljs-title">ColorPicker</span> &#123;<br>            <span class="hljs-attribute">id:</span><span class="hljs-string"> redColor</span><br>            <span class="hljs-attribute">color</span>: <span class="hljs-string">&quot;red&quot;</span><br>            <span class="hljs-attribute">focus</span>: <span class="hljs-literal">true</span><br>            <span class="hljs-attribute">anchors.bottom</span>: <span class="hljs-built_in">parent</span>.bottom<br>            <span class="hljs-attribute">anchors.bottomMargin</span>: <span class="hljs-number">4</span><br>            <span class="hljs-attribute">anchors.left</span>: <span class="hljs-built_in">parent</span>.left<br>            <span class="hljs-attribute">anchors.leftMargin</span>: <span class="hljs-number">4</span><br><br>            <span class="hljs-attribute">KeyNavigation.right</span>: blueColor<br>            <span class="hljs-attribute">KeyNavigation.tab</span>: blueColor<br>            <span class="hljs-attribute">onColorPicked</span>: &#123;<br>                coloredText.color = clr<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-title">ColorPicker</span> &#123;<br>            <span class="hljs-attribute">id:</span><span class="hljs-string"> blueColor</span><br>            <span class="hljs-attribute">color</span>: <span class="hljs-string">&quot;blue&quot;</span><br>            <span class="hljs-attribute">anchors.left</span>: redColor.right<br>            <span class="hljs-attribute">anchors.leftMargin</span>: <span class="hljs-number">4</span><br>            <span class="hljs-attribute">anchors.bottom</span>: <span class="hljs-built_in">parent</span>.bottom<br>            <span class="hljs-attribute">anchors.bottomMargin</span>: <span class="hljs-number">4</span><br><br>            <span class="hljs-attribute">KeyNavigation.left</span>: redColor<br>            <span class="hljs-attribute">KeyNavigation.right</span>: pinkColor<br>            <span class="hljs-attribute">KeyNavigation.tab</span>: pinkColor<br>        &#125;<br><br>        <span class="hljs-title">ColorPicker</span> &#123;<br>            <span class="hljs-attribute">id:</span><span class="hljs-string"> pinkColor</span><br>            <span class="hljs-attribute">color</span>: <span class="hljs-string">&quot;pink&quot;</span><br>            <span class="hljs-attribute">anchors.left</span>: blueColor.right<br>            <span class="hljs-attribute">anchors.leftMargin</span>: <span class="hljs-number">4</span><br>            <span class="hljs-attribute">anchors.bottom</span>: <span class="hljs-built_in">parent</span>.bottom<br>            <span class="hljs-attribute">anchors.bottomMargin</span>: <span class="hljs-number">4</span><br><br>            <span class="hljs-attribute">KeyNavigation.left</span>: blueColor<br>            <span class="hljs-attribute">KeyNavigation.right</span>: yellowColor<br>            <span class="hljs-attribute">KeyNavigation.tab</span>: yellowColor<br>        &#125;<br><br>        <span class="hljs-title">ColorPicker</span> &#123;<br>            <span class="hljs-attribute">id:</span><span class="hljs-string"> yellowColor</span><br>            <span class="hljs-attribute">color</span>: <span class="hljs-string">&quot;yellow&quot;</span><br>            <span class="hljs-attribute">anchors.left</span>: pinkColor.right<br>            <span class="hljs-attribute">anchors.leftMargin</span>: <span class="hljs-number">4</span><br>            <span class="hljs-attribute">anchors.bottom</span>: <span class="hljs-built_in">parent</span>.bottom<br>            <span class="hljs-attribute">anchors.bottomMargin</span>: <span class="hljs-number">4</span><br><br>            <span class="hljs-attribute">KeyNavigation.left</span>: pinkColor<br>            <span class="hljs-attribute">KeyNavigation.tab</span>: redColor<br>        &#125;<br><br><br><br>        <span class="hljs-attribute">Component.onCompleted</span>: &#123;<br>            blueColor.colorPicked.connect(setTextColor);<br>            pinkColor.colorPicked.connect(setTextColor);<br>            yellowColor.colorPicked.connect(setTextColor);<br><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><p><img src="/img/qt_colorPicker.gif" srcset="/img/loading.gif" alt="colorPicker"></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Qt/">Qt</a>
+                    
+                      <a class="hover-with-bg" href="/tags/QML/">QML</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Color/">Color</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Component/">Component</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/02/03/qml-ecmascript-base/">
+                        <span class="hidden-mobile">QML ECMAScript 基础</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    <script>
+      Fluid.utils.waitElementVisible('disqus_thread', function() {
+        Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqusjs.css');
+        Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqus.js', function () {
+          new DisqusJS({
+            shortname: 'demo',
+            apikey: 'AAy1C4DFz9M53p1E8j2sRcbWu6UnisFOEYLamItnJM9vMSdNpYmogcVzpVgdYy8e'
+          });
+        });
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the
+      <a target="_blank" href="https://disqus.com/?ref_noscript" rel="nofollow noopener noopener">comments powered by Disqus.</a>
+    </noscript>
+  </div>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     © 2020-2020 峰影(zsf90). All rights reserved.<br> <a href="/atom.xml"><span>atom.xml</span></a> |  构建 <a href="https://hexo.io" target="_blank" rel="nofollow noopener" title="Hexo"><span>Hexo</span></a> |  主题  <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener" title="Fluid 主题"><span>Fluid</span></a> |  <a href="https://www.github.com/fy2008" target="_blank" title="我的Github"><span>Github</span></a> |  <a href="/sitemap.xml">sitemap</a> |  <a href="/baidusitemap.xml">百度网站地图</a> |  <a href="https://www.51.la/?21050229" target="_blank">51拉统计</a> |  <a href="https://tongji.baidu.com/web/welcome/ico?s=f2c2c29ba089bbe747d17255f0afdb56" target="_blank">百度统计</a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?f2c2c29ba089bbe747d17255f0afdb56";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script defer type="text/javascript" src="//js.users.51.la/21050229.js"></script>
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
