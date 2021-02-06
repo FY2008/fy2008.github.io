@@ -6,7 +6,7 @@
   <link href="https://fy2008.github.io/atom.xml" rel="self"/>
   
   <link href="https://fy2008.github.io/"/>
-  <updated>2021-02-06T13:08:59.805Z</updated>
+  <updated>2021-02-06T14:47:43.933Z</updated>
   <id>https://fy2008.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>销毁动态创建的对象</title>
+    <link href="https://fy2008.github.io/2021/02/06/delete-dynamic-object/"/>
+    <id>https://fy2008.github.io/2021/02/06/delete-dynamic-object/</id>
+    <published>2021-02-06T13:50:27.000Z</published>
+    <updated>2021-02-06T14:47:43.933Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;有些软件，在不需要一个动态创建的 &lt;code&gt;QML&lt;/code&gt; 对象时，仅仅是把它的 &lt;code&gt;visible&lt;/code&gt; 属性设置为 &lt;code&gt;false&lt;/code&gt; 或者把 &lt;code&gt;opacity&lt;/code&gt; 属性设置为</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://fy2008.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Qt" scheme="https://fy2008.github.io/tags/Qt/"/>
+    
+    <category term="QML" scheme="https://fy2008.github.io/tags/QML/"/>
+    
+  </entry>
+  
+  <entry>
     <title>在 ECMAScript 中动态创建对象</title>
     <link href="https://fy2008.github.io/2021/02/05/qml-ecmascript-demo-1/"/>
     <id>https://fy2008.github.io/2021/02/05/qml-ecmascript-demo-1/</id>
     <published>2021-02-05T13:19:01.000Z</published>
-    <updated>2021-02-06T13:08:59.805Z</updated>
+    <updated>2021-02-06T13:42:21.306Z</updated>
     
     
       

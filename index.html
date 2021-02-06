@@ -192,6 +192,63 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/02/06/delete-dynamic-object/" target="_self">
+          <img src="/img/15.jpg" srcset="/img/loading.gif" alt="销毁动态创建的对象">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/06/delete-dynamic-object/">销毁动态创建的对象</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/06/delete-dynamic-object/">
+          
+          
+            
+          
+          有些软件，在不需要一个动态创建的 QML 对象时，仅仅是把它的 visible 属性设置为 false 或者把 opacity 属性设置为 0，而不是删除这个对象。如果动态创建的对很多，无用的对象都这么处理而不直接删除，那会给软件带来比较大的性能问题，比如内存占用增多，运行速度变慢等。所以呢，动态创建的对象，不再使用时，最好把它删除。
+我们这里说的动态创建的对象，特指使用 Qt.createCom
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-06 21:50" pubdate>
+              2021-02-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Qt/">Qt</a>
+            
+              <a href="/tags/QML/">QML</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2021/02/05/qml-ecmascript-demo-1/" target="_self">
           <img src="/img/14.jpg" srcset="/img/loading.gif" alt="在 ECMAScript 中动态创建对象">
         </a>
@@ -652,77 +709,6 @@ CMake is an open-source, cross-platform family of tools designed to build, test 
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2021/01/05/stm32-hal-uart-1/" target="_self">
-          <img src="/img/NUCLEO-F410RB.webp" srcset="/img/loading.gif" alt="STM32 USART 函数列表和一些类型定义">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/01/05/stm32-hal-uart-1/">STM32 USART 函数列表和一些类型定义</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/01/05/stm32-hal-uart-1/">
-          
-          
-            
-          
-          本篇文章是一篇介绍 STM32 USART 相关函数的笔记，下次忘记的时候可以方便查找。
-串口寄存器列表
-状态寄存器 (USART_SR)
-数据寄存器 (USART_DR)
-波特率寄存器 (USART_BRR)
-智能卡模式下的保护时间寄存器 (USART_GTPR)
-
-
-与STM32 USART 相关的函数和一些类型。
-函数列表
-HAL_UART_Abort()
-HAL_UART_Abort_IT
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-01-05 18:05" pubdate>
-              2021-01-05
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">电子技术</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/STM32/">STM32</a>
-            
-              <a href="/tags/USART/">USART</a>
-            
-              <a href="/tags/%E4%B8%B2%E5%8F%A3/">串口</a>
-            
-              <a href="/tags/%E5%87%BD%E6%95%B0/">函数</a>
             
           </div>
         
