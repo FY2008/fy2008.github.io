@@ -6,8 +6,8 @@ tags:
 - QML
 category:
 - 计算机
-index_img:
-banner_img:
+index_img: /img/12.jpg
+banner_img: /img/12.jpg
 ---
 
 `QML` 是一种类似 `CSS` 与 `JavaScript` 相结合的描述用户界面的语言。
