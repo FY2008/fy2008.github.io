@@ -6,7 +6,7 @@
   <link href="https://fy2008.github.io/atom.xml" rel="self"/>
   
   <link href="https://fy2008.github.io/"/>
-  <updated>2021-02-06T15:07:56.429Z</updated>
+  <updated>2021-02-06T19:02:17.613Z</updated>
   <id>https://fy2008.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Qt Quick 元素布局</title>
+    <link href="https://fy2008.github.io/2021/02/06/Qt-Quick-Element-Layout/"/>
+    <id>https://fy2008.github.io/2021/02/06/Qt-Quick-Element-Layout/</id>
+    <published>2021-02-06T15:13:36.000Z</published>
+    <updated>2021-02-06T19:02:17.613Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在 &lt;code&gt;Qt Quick&lt;/code&gt; 中有两套与元素布局相关的类库，一套叫作 &lt;code&gt;Item Positioner&lt;/code&gt; (定位器)，一套叫作 &lt;code&gt;Item Layout&lt;/code&gt; (布局)。其实我们前面还讲了一个锚布局，它通过</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://fy2008.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Qt" scheme="https://fy2008.github.io/tags/Qt/"/>
+    
+    <category term="QML" scheme="https://fy2008.github.io/tags/QML/"/>
+    
+    <category term="Layout" scheme="https://fy2008.github.io/tags/Layout/"/>
+    
+  </entry>
   
   <entry>
     <title>销毁动态创建的对象</title>
@@ -556,27 +585,6 @@
     
     
     <category term="Hexo" scheme="https://fy2008.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://fy2008.github.io/2020/12/28/hello-world/"/>
-    <id>https://fy2008.github.io/2020/12/28/hello-world/</id>
-    <published>2020-12-28T06:37:02.453Z</published>
-    <updated>2020-12-28T06:37:02.453Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
     
   </entry>
   
