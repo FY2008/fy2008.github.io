@@ -6,7 +6,7 @@
   <link href="https://fy2008.github.io/atom.xml" rel="self"/>
   
   <link href="https://fy2008.github.io/"/>
-  <updated>2021-02-06T19:02:17.613Z</updated>
+  <updated>2021-02-09T03:30:07.136Z</updated>
   <id>https://fy2008.github.io/</id>
   
   <author>
@@ -15,6 +15,66 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Qt 设置程序图标</title>
+    <link href="https://fy2008.github.io/2021/02/09/qt-set-window-icon/"/>
+    <id>https://fy2008.github.io/2021/02/09/qt-set-window-icon/</id>
+    <published>2021-02-09T03:01:42.000Z</published>
+    <updated>2021-02-09T03:30:07.136Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Qt 设置程序图标和窗口图标的方法以及注意事项：&lt;/p&gt;
+&lt;h2 id=&quot;设置窗口图标&quot;&gt;&lt;a href=&quot;#设置窗口图标&quot; class=&quot;headerlink&quot; title=&quot;设置窗口图标&quot;&gt;&lt;/a&gt;设置窗口图标&lt;/h2&gt;&lt;p&gt;设置窗口图标的方法很简单，通过</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://fy2008.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Qt" scheme="https://fy2008.github.io/tags/Qt/"/>
+    
+    <category term="程序图标" scheme="https://fy2008.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%9B%BE%E6%A0%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Qt Signal Slot</title>
+    <link href="https://fy2008.github.io/2021/02/08/qt-signal-slot/"/>
+    <id>https://fy2008.github.io/2021/02/08/qt-signal-slot/</id>
+    <published>2021-02-08T09:06:39.000Z</published>
+    <updated>2021-02-08T09:06:39.214Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Qt TabWidget 控件</title>
+    <link href="https://fy2008.github.io/2021/02/08/qt-tab-widgets/"/>
+    <id>https://fy2008.github.io/2021/02/08/qt-tab-widgets/</id>
+    <published>2021-02-08T08:34:44.000Z</published>
+    <updated>2021-02-08T09:11:51.313Z</updated>
+    
+    
+    
+    
+    <category term="计算机" scheme="https://fy2008.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Qt" scheme="https://fy2008.github.io/tags/Qt/"/>
+    
+    <category term="TabWidget" scheme="https://fy2008.github.io/tags/TabWidget/"/>
+    
+  </entry>
   
   <entry>
     <title>Qt Quick 元素布局</title>
@@ -501,90 +561,6 @@
     <category term="vscode" scheme="https://fy2008.github.io/tags/vscode/"/>
     
     <category term="插件" scheme="https://fy2008.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MSYS2 命令笔记</title>
-    <link href="https://fy2008.github.io/2020/12/29/msys2-command/"/>
-    <id>https://fy2008.github.io/2020/12/29/msys2-command/</id>
-    <published>2020-12-29T04:57:02.000Z</published>
-    <updated>2020-12-29T06:19:24.421Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;首先说说什么是 &lt;code&gt;MSYS2&lt;/code&gt; ？&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;MSYS2 （Minimal SYStem 2)&lt;/code&gt; 是一个&lt;code&gt;MSYS&lt;/code&gt;的独立改写版本，主要用于 &lt;code&gt;shell&lt;/code&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://fy2008.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="MSYS2" scheme="https://fy2008.github.io/tags/MSYS2/"/>
-    
-    <category term="命令" scheme="https://fy2008.github.io/tags/%E5%91%BD%E4%BB%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用 VSCode 开发 STM32 项目</title>
-    <link href="https://fy2008.github.io/2020/12/29/stm32-vscode-dev/"/>
-    <id>https://fy2008.github.io/2020/12/29/stm32-vscode-dev/</id>
-    <published>2020-12-28T16:38:30.000Z</published>
-    <updated>2020-12-29T08:05:33.264Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;vscode 是一款最好用的开发工具之一，该软件非常好用强大，通过安装插件几乎可以完成所有的开发工作。&lt;/p&gt;
-&lt;p&gt;用 vscode 开发 stm32 的步骤是：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;用&lt;code&gt;STM32CubeMX&lt;/code&gt; 生成</summary>
-        
-      
-    
-    
-    
-    <category term="电子技术" scheme="https://fy2008.github.io/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="STM32" scheme="https://fy2008.github.io/tags/STM32/"/>
-    
-    <category term="vscode" scheme="https://fy2008.github.io/tags/vscode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo 配置笔记</title>
-    <link href="https://fy2008.github.io/2020/12/28/Hexo-%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/"/>
-    <id>https://fy2008.github.io/2020/12/28/Hexo-%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/</id>
-    <published>2020-12-28T06:45:03.000Z</published>
-    <updated>2020-12-29T06:36:37.893Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;这是一篇介绍 &lt;code&gt;hexo&lt;/code&gt; 配置的文章。&lt;/p&gt;
-&lt;h2 id=&quot;选择一款主题&quot;&gt;&lt;a href=&quot;#选择一款主题&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://fy2008.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://fy2008.github.io/tags/Hexo/"/>
     
   </entry>
   

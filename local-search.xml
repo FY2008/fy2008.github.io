@@ -4,6 +4,73 @@
   
   
   <entry>
+    <title>Qt 设置程序图标</title>
+    <link href="/2021/02/09/qt-set-window-icon/"/>
+    <url>/2021/02/09/qt-set-window-icon/</url>
+    
+    <content type="html"><![CDATA[<p>Qt 设置程序图标和窗口图标的方法以及注意事项：</p><h2 id="设置窗口图标"><a href="#设置窗口图标" class="headerlink" title="设置窗口图标"></a>设置窗口图标</h2><p>设置窗口图标的方法很简单，通过 <code>setWindowIcon(QIcon(&quot;:/images/logo.ico&quot;))</code> 方法即可，这里要注意的是，<code>QIcon()</code> 参数中的路径不能是 Url 形式的（qrc:/images/logo.ico），通过在资源文件上鼠标右击选择复制路径获取路径。</p><p><img src="/img/qt-icon-path.png" alt="qt-icon-path"></p><p><img src="/img/qt-icon-window.png" alt="qt-icon-window"></p><h2 id="设置应用程序图标"><a href="#设置应用程序图标" class="headerlink" title="设置应用程序图标"></a>设置应用程序图标</h2><p>通过应用程序图标就是生成的 .exe 文件的图标，方法是在Qt 工程的 SerialTool.pro 文件中添加 RC_ICONS = logo.ico ，添加应用程序的图标。</p><p>通过添加 RC_ICONS = logo.ico 方式添加的应用程序图标，在没有设置程序的窗口图标时，同样也会改变窗口的图标，通过同时设置窗口图标和应用程序图标可以给程序添加窗口与应用程序不一样的图标。</p><h2 id="SerialTool-pro"><a href="#SerialTool-pro" class="headerlink" title="SerialTool.pro"></a>SerialTool.pro</h2><figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs qmake">QT       +&#x3D; core gui<br><br>greaterThan(QT_MAJOR_VERSION, 4): QT +&#x3D; widgets<br><br>CONFIG +&#x3D; c++11<br><br># You can make your code fail to compile if it uses deprecated APIs.<br># In order to do so, uncomment the following line.<br>#DEFINES +&#x3D; QT_DISABLE_DEPRECATED_BEFORE&#x3D;0x060000    # disables all the APIs deprecated before Qt 6.0.0<br><br>SOURCES +&#x3D; \<br>    main.cpp \<br>    mainwindow.cpp<br><br>HEADERS +&#x3D; \<br>    mainwindow.h<br><br>FORMS +&#x3D; \<br>    mainwindow.ui<br><br># Default rules for deployment.<br>qnx: target.path &#x3D; &#x2F;tmp&#x2F;$$&#123;TARGET&#125;&#x2F;bin<br>else: unix:!android: target.path &#x3D; &#x2F;opt&#x2F;$$&#123;TARGET&#125;&#x2F;bin<br>!isEmpty(target.path): INSTALLS +&#x3D; target<br><br>RESOURCES +&#x3D; \<br>    Resource.qrc<br><br>RC_ICONS &#x3D; images&#x2F;logo.ico<br><br></code></pre></div></td></tr></table></figure><p><img src="/img/qt-icon-app-win.png" alt="qt-icon-app-win"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Qt</tag>
+      
+      <tag>程序图标</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Qt Signal Slot</title>
+    <link href="/2021/02/08/qt-signal-slot/"/>
+    <url>/2021/02/08/qt-signal-slot/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Qt TabWidget 控件</title>
+    <link href="/2021/02/08/qt-tab-widgets/"/>
+    <url>/2021/02/08/qt-tab-widgets/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Qt</tag>
+      
+      <tag>TabWidget</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Qt Quick 元素布局</title>
     <link href="/2021/02/06/Qt-Quick-Element-Layout/"/>
     <url>/2021/02/06/Qt-Quick-Element-Layout/</url>
