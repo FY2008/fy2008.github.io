@@ -94,3 +94,4 @@ Window {
 var newObject = Qt.createQmlObject('import QtQuick 2.12;
     Rectangle {color: "red"; width: 20; height: 20}', parentItem, "dynamicSnippet1")
 ```
+createQmlObject 方法的第一个参数是要创建对象的 QML 字符串，就像一个 QML 文档一样，你需要导入你用到的所有类型和模块；第二个参数用于指定要创建的对象的父对象；第三个参数用于给新创建的对象关联一个文件路径，主要用于报告错误。
