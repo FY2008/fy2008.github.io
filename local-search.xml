@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>NUCLEO-F410RB 扩展版分享</title>
+    <link href="/2021/02/10/NUCLEO-F410RB-Extend-Board/"/>
+    <url>/2021/02/10/NUCLEO-F410RB-Extend-Board/</url>
+    
+    <content type="html"><![CDATA[<p>分享一个 NUCLEO-F410RB 的扩展版，相信资料如下：</p><h2 id="展示"><a href="#展示" class="headerlink" title="展示"></a>展示</h2><p><img src="/img/NUCLEO-F410RB-Extend-Board.jpg" alt="NUCLEO-F410RB-Extend-Board"></p><h2 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h2><p><a href="/pdf/NUCLEO-F410RB-Extend-Board.pdf">NUCLEO-F410RB-Extend-Board.pdf</a></p><h2 id="AD-项目文件"><a href="#AD-项目文件" class="headerlink" title="AD 项目文件"></a>AD 项目文件</h2><p>链接：<a href="https://pan.baidu.com/s/1M7rEx4EabCf34eMM_gfdjQ">https://pan.baidu.com/s/1M7rEx4EabCf34eMM_gfdjQ</a><br>提取码：nwmz<br>复制这段内容后打开百度网盘手机App，操作更方便哦</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>电子计数</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>STM32</tag>
+      
+      <tag>NUCLEO-F410RB</tag>
+      
+      <tag>扩展版</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Qt 在状态栏显示当前时间</title>
     <link href="/2021/02/10/qt-timer-datetime-statusbar/"/>
     <url>/2021/02/10/qt-timer-datetime-statusbar/</url>
